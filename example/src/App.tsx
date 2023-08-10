@@ -1,18 +1,36 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-bottom-select-picker';
+import { StatusBar, StyleSheet, View } from 'react-native';
+import { Picker } from 'react-native-bottom-select-picker';
+import { useState } from 'react';
+import type { PickerItem } from '../../src/components/Picker/model';
 
+const data: PickerItem[] = [
+  {
+    label: 'Apple',
+    value: 'Apple',
+  },
+  {
+    label: 'Orange',
+    value: 'Orange',
+  },
+  {
+    label: 'Banana',
+    value: 'Banana',
+  },
+];
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const [value, setValue] = useState<PickerItem | undefined>();
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <StatusBar />
+      <Picker
+        placeholder={'Select your favorite color'}
+        data={data}
+        value={value}
+        onChange={setValue}
+      />
     </View>
   );
 }
@@ -20,12 +38,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    padding: 16,
   },
 });

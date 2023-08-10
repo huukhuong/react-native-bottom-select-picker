@@ -20,7 +20,7 @@ const data: PickerItem[] = [
   },
 ];
 export default function App() {
-  const [value, setValue] = useState<PickerItem | undefined>();
+  const [value, setValue] = useState<string>('');
 
   return (
     <View style={styles.container}>

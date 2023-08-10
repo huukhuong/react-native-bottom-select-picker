@@ -35,7 +35,7 @@ const PickerComponent = ({
   const [keyboardHeight, setKeyboardHeight] = useState<number>(0);
 
   const itemSelected = useMemo(() => {
-    return data.find((e) => e.value === value?.value);
+    return data.find((e) => e.value === value);
   }, [data, value]);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const PickerComponent = ({
 
   const handleSelectItem = (item: PickerItem) => {
     if (!disable) {
-      onChange(item);
+      onChange(item.value);
       setIsOpened(false);
     }
   };
@@ -75,7 +75,7 @@ const PickerComponent = ({
 
   const _renderItem = useCallback(
     ({ item }: { item: PickerItem }) => {
-      const isSelected = item.value === value?.value;
+      const isSelected = item.value === value;
       return (
         <>
           <TouchableHighlight

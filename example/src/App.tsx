@@ -1,9 +1,8 @@
 import * as React from 'react';
 
 import { StatusBar, StyleSheet, View } from 'react-native';
-import { Picker } from 'react-native-bottom-select-picker';
+import { Picker, type PickerItem } from 'react-native-bottom-select-picker';
 import { useState } from 'react';
-import type { PickerItem } from '../../src/components/Picker/model';
 
 const data: PickerItem[] = [
   {

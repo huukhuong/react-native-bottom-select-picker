@@ -57,6 +57,12 @@ const PickerComponent = ({
     handleSearch();
   }, [keyword]);
 
+  const handleOpenPicker = () => {
+    if (!disable) {
+      setIsOpened(true);
+    }
+  };
+
   const handleSelectItem = (item: PickerItem) => {
     if (!disable) {
       onChange(item.value);
@@ -174,7 +180,7 @@ const PickerComponent = ({
           disable && containerDisableStyle,
         ]}
       >
-        <Pressable style={styles.btnDropdown} onPress={() => setIsOpened(true)}>
+        <Pressable style={styles.btnDropdown} onPress={handleOpenPicker}>
           {itemSelected && itemSelected.label ? (
             <Text numberOfLines={1} style={[styles.textBase, textStyle]}>
               {itemSelected.label}

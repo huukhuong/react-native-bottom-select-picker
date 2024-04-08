@@ -1,16 +1,19 @@
-import { View, Text } from 'react-native';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import type { PickerItem, PickerProps, ValueType } from './model';
-import { TouchableOpacity } from 'react-native';
-import { useWindowDimensions } from 'react-native';
+import {
+  FlatList,
+  Image,
+  Keyboard,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import ReactNativeModal from 'react-native-modal';
-import { Image } from 'react-native';
 import { IMAGES } from '../../assets';
 import compareSearchText from '../../helpers/compareSearchText';
-import { TextInput } from 'react-native';
-import { Keyboard } from 'react-native';
-import { StyleSheet } from 'react-native';
-import { FlatList } from 'react-native';
+import type { PickerItem, PickerProps, ValueType } from './model';
 
 const itemHeight = 45;
 const borderRadius = 7;
@@ -33,6 +36,7 @@ const Picker = (props: PickerProps) => {
     searchPlaceholder = 'Enter keyword',
     disable,
     containerStyle,
+    containerTextStyle,
     inputSearchStyle,
     closeIcon,
     renderItem,
@@ -157,7 +161,9 @@ const Picker = (props: PickerProps) => {
             },
           ]}
         >
-          <Text numberOfLines={1}>{selectedItem?.label || placeholder}</Text>
+          <Text numberOfLines={1} style={containerTextStyle}>
+            {selectedItem?.label || placeholder}
+          </Text>
 
           {_renderArrow()}
         </TouchableOpacity>

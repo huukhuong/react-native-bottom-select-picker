@@ -20,6 +20,7 @@ export interface PickerProps {
   searchPlaceholder?: string;
   disable?: boolean;
   containerStyle?: StyleProp<ViewStyle>;
+  containerTextStyle?: StyleProp<TextStyle>;
   inputSearchStyle?: StyleProp<TextStyle>;
   renderArrow?: (pickerShown: boolean) => ReactNode;
   closeIcon?: () => ReactNode;

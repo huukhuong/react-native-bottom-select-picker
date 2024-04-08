@@ -33,10 +33,11 @@ cd ios && pod install
 | 6   | searchPlaceholder | String                                 | no         | Placeholder in TextInput search                                                            |
 | 7   | disable           | Boolean                                | no         | Specifies the disabled state of the Picker                                                 |
 | 8   | containerStyle    | ViewStyle                              | no         | Styling for container Picker                                                               |
-| 9   | renderArrow       | (pickerShown) => ReactNode             | no         | Custom arrow icon                                                                          |
-| 10  | closeIcon         | () => ReactNode                        | no         | Custom close icon modal header                                                             |
-| 11  | renderItem        | ({ item, isSelected }) => ReactElement | no         | Custom render item in list modal                                                           |
-| 12  | multiple          | boolean                                | no         | Multiple select values                                                                     |
+| 9   | containerTextStyle| TextStyle                              | no         | Styling for container text Picker                                                          |
+| 10  | renderArrow       | (pickerShown) => ReactNode             | no         | Custom arrow icon                                                                          |
+| 11  | closeIcon         | () => ReactNode                        | no         | Custom close icon modal header                                                             |
+| 12  | renderItem        | ({ item, isSelected }) => ReactElement | no         | Custom render item in list modal                                                           |
+| 13  | multiple          | boolean                                | no         | Multiple select values                                                                     |
 
 # Picker Example
 

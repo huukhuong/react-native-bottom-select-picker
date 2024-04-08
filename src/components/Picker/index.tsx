@@ -4,13 +4,13 @@ import type { PickerItem, PickerProps, ValueType } from './model';
 import { TouchableOpacity } from 'react-native';
 import { useWindowDimensions } from 'react-native';
 import ReactNativeModal from 'react-native-modal';
-import { FlashList } from '@shopify/flash-list';
 import { Image } from 'react-native';
 import { IMAGES } from '../../assets';
 import compareSearchText from '../../helpers/compareSearchText';
 import { TextInput } from 'react-native';
 import { Keyboard } from 'react-native';
 import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 
 const itemHeight = 45;
 const borderRadius = 7;
@@ -263,11 +263,10 @@ const Picker = (props: PickerProps) => {
             </View>
 
             <View style={styles.listWrapper}>
-              <FlashList
+              <FlatList
                 bounces={false}
                 data={dataFiltered}
                 extraData={value}
-                estimatedItemSize={100}
                 renderItem={_renderItem}
                 ItemSeparatorComponent={() => (
                   <View style={styles.itemSeparator} />

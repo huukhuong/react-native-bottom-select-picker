@@ -1,6 +1,6 @@
 {
   "name": "react-native-bottom-select-picker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React Native library that provides a customizable Picker component for React Native applications.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -29,7 +29,6 @@
   "scripts": {
     "test": "jest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -171,7 +170,6 @@
     ]
   },
   "dependencies": {
-    "@shopify/flash-list": "^1.5.0",
     "expo": "^49.0.7",
     "react-native-modal": "^13.0.1"
   }

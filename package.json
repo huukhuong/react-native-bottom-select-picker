@@ -1,6 +1,6 @@
 {
   "name": "react-native-bottom-select-picker",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A React Native library that provides a customizable Picker component for React Native applications.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -97,7 +97,6 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [

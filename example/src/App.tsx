@@ -34,15 +34,17 @@ const data: PickerItem[] = [
     value: 'Strawberry',
   },
 ];
+
 export default function App() {
   const [value, setValue] = useState<string>('');
+  const [multipleValue, setMultipleValue] = useState<string[]>([]);
 
   return (
     <View style={styles.container}>
       <View>
         <Text style={styles.label}>Simple Picker</Text>
         <Picker
-          placeholder={'Select your favorite color'}
+          placeholder={'Select your favorite fruit'}
           data={data}
           value={value}
           onChange={setValue}
@@ -52,7 +54,7 @@ export default function App() {
       <View>
         <Text style={styles.label}>Picker with search</Text>
         <Picker
-          placeholder={'Select your favorite color'}
+          placeholder={'Select your favorite fruit'}
           data={data}
           value={value}
           onChange={setValue}
@@ -63,11 +65,22 @@ export default function App() {
       <View>
         <Text style={styles.label}>Picker disabled</Text>
         <Picker
-          placeholder={'Select your favorite color'}
+          placeholder={'Select your favorite fruit'}
           data={data}
           value={value}
           onChange={setValue}
           disable
+        />
+      </View>
+
+      <View>
+        <Text style={styles.label}>Picker with multiple item choices</Text>
+        <Picker
+          placeholder={'Select your favorite fruits'}
+          data={data}
+          value={multipleValue}
+          onChange={setMultipleValue}
+          multiple
         />
       </View>
     </View>
@@ -85,5 +98,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontWeight: 'bold',
     color: '#333333',
-  }
+  },
 });
